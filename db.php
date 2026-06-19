@@ -1,8 +1,8 @@
 <?php
-$host = '127.0.0.1';
-$user = 'root';
-$pass = ''; // Default XAMPP password is empty
-$dbname = 'hotel_db';
+$host = getenv('DB_HOST') ?: 'localhost';
+$user = getenv('DB_USER') ?: 'root';
+$pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : ''; // Default XAMPP password is empty
+$dbname = getenv('DB_NAME') ?: 'hotel_db';
 
 try {
     // Attempt to connect to MySQL without specifying a database first

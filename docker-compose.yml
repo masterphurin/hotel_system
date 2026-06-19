@@ -1,0 +1,18 @@
+services:
+  app:
+    image: ghcr.io/min-kittisak/hotel_system:latest
+    build: .
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST:-157.85.96.163}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_USER: ${DB_USER:-cs}
+      DB_PASS: ${DB_PASS:-cEBzc3cwcmQ=}
+      DB_NAME: ${DB_NAME:-hotel_db}
+    ports:
+      - "7299:80"
+    volumes:
+      - app_uploads:/var/www/html/assets/images
+
+volumes:
+  app_uploads:

@@ -1,5 +1,11 @@
 <?php
-require_once __DIR__ . '/header.php';
+// Bootstrap session + dependencies WITHOUT emitting any output yet,
+// so header("Location: ...") redirects below can still send headers.
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/lang.php';
 
 // If already logged in, redirect to homepage/dashboard
 if (isset($_SESSION['admin_logged_in'])) {
@@ -90,6 +96,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         }
     }
 }
+
+// All redirects are done — now it is safe to emit HTML output.
+require_once __DIR__ . '/header.php';
 ?>
 
 <section class="section-padding">

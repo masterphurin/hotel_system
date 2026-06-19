@@ -1,0 +1,4 @@
+# Ensure shell scripts always use LF, even when committed from Windows.
+# CRLF in docker-entrypoint.sh would break execution inside the Linux container.
+*.sh text eol=lf
+docker-entrypoint.sh text eol=lf

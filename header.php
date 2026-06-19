@@ -28,6 +28,13 @@ require_once __DIR__ . '/lang.php';
 </head>
 <body>
 
+<div class="luxury-pattern-bg"></div>
+<div class="luxury-bg-ambient">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+</div>
+
 <header id="main-header">
     <div class="container">
         <nav class="navbar">

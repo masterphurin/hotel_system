@@ -1529,3 +1529,85 @@ html.light-theme .room-card:hover {
 .reveal.reveal-right.active {
     transform: translateX(0);
 }
+
+/* Ambient Luxury Background Elements */
+.luxury-bg-ambient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+.ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.08;
+    mix-blend-mode: screen;
+    animation: floatAmbient 25s infinite ease-in-out;
+}
+html.light-theme .ambient-orb {
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+}
+.orb-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, var(--primary-gold) 0%, rgba(197, 168, 128, 0) 70%);
+    top: -10%;
+    left: -10%;
+    animation-duration: 20s;
+}
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-gold) 0%, rgba(212, 175, 55, 0) 70%);
+    bottom: -15%;
+    right: -10%;
+    animation-delay: -5s;
+    animation-duration: 28s;
+}
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--primary-gold) 0%, rgba(197, 168, 128, 0) 70%);
+    top: 40%;
+    right: 20%;
+    animation-delay: -12s;
+    animation-duration: 24s;
+}
+
+@keyframes floatAmbient {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -60px) scale(1.1); }
+    66% { transform: translate(-30px, 30px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Luxury Repeating Geometric Pattern Overlay */
+.luxury-pattern-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.015; /* Very subtle so it doesn't distract readability */
+    background-image: 
+        linear-gradient(30deg, var(--primary-gold) 12%, transparent 12.5%, transparent 87%, var(--primary-gold) 87.5%, var(--primary-gold)),
+        linear-gradient(150deg, var(--primary-gold) 12%, transparent 12.5%, transparent 87%, var(--primary-gold) 87.5%, var(--primary-gold)),
+        linear-gradient(30deg, var(--primary-gold) 12%, transparent 12.5%, transparent 87%, var(--primary-gold) 87.5%, var(--primary-gold)),
+        linear-gradient(150deg, var(--primary-gold) 12%, transparent 12.5%, transparent 87%, var(--primary-gold) 87.5%, var(--primary-gold)),
+        linear-gradient(60deg, rgba(197,168,128,0.5) 25%, transparent 25.5%, transparent 75%, rgba(197,168,128,0.5) 75.5%, rgba(197,168,128,0.5)),
+        linear-gradient(60deg, rgba(197,168,128,0.5) 25%, transparent 25.5%, transparent 75%, rgba(197,168,128,0.5) 75.5%, rgba(197,168,128,0.5));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    transition: opacity 0.4s ease;
+}
+html.light-theme .luxury-pattern-bg {
+    opacity: 0.025; /* Slightly more visible on light mode */
+}

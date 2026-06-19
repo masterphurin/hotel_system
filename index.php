@@ -64,7 +64,7 @@ try {
 
 <!-- Welcome & Philosophy -->
 <section class="section-padding">
-    <div class="container reveal" style="text-align: center; max-width: 800px;">
+    <div class="container reveal reveal-scale" style="text-align: center; max-width: 800px;">
         <span class="section-subtitle"><?php echo __t('index_phil_sub'); ?></span>
         <h2 class="section-title"><?php echo __t('index_phil_title'); ?></h2>
         <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 30px; line-height: 1.8; font-weight: 300;">
@@ -128,7 +128,7 @@ try {
         </div>
         
         <div class="rooms-grid">
-            <div class="room-card reveal reveal-delay-1" style="text-align: center; padding: 40px 30px; align-items: center;">
+            <div class="room-card reveal reveal-left reveal-delay-1" style="text-align: center; padding: 40px 30px; align-items: center;">
                 <div style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;">
                     <i class="fas fa-spa"></i>
                 </div>
@@ -136,7 +136,7 @@ try {
                 <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;"><?php echo __t('index_service_spa_desc'); ?></p>
             </div>
             
-            <div class="room-card reveal reveal-delay-2" style="text-align: center; padding: 40px 30px; align-items: center;">
+            <div class="room-card reveal reveal-scale reveal-delay-2" style="text-align: center; padding: 40px 30px; align-items: center;">
                 <div style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;">
                     <i class="fas fa-utensils"></i>
                 </div>
@@ -144,7 +144,7 @@ try {
                 <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;"><?php echo __t('index_service_dining_desc'); ?></p>
             </div>
             
-            <div class="room-card reveal reveal-delay-3" style="text-align: center; padding: 40px 30px; align-items: center;">
+            <div class="room-card reveal reveal-right reveal-delay-3" style="text-align: center; padding: 40px 30px; align-items: center;">
                 <div style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;">
                     <i class="fas fa-concierge-bell"></i>
                 </div>
@@ -163,7 +163,7 @@ try {
             <h2 class="section-title"><?php echo __t('index_testi_title'); ?></h2>
         </div>
         
-        <div class="reveal" style="max-width: 800px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-light); padding: 50px; text-align: center; position: relative;">
+        <div class="reveal reveal-scale" style="max-width: 800px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-light); padding: 50px; text-align: center; position: relative;">
             <div style="font-size: 4rem; color: rgba(197, 168, 128, 0.1); position: absolute; top: 10px; left: 30px; font-family: var(--font-serif);">“</div>
             <p style="font-size: 1.1rem; font-style: italic; color: var(--text-muted); margin-bottom: 30px; line-height: 1.8;">
                 "<?php echo __t('index_testi_quote'); ?>"

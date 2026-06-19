@@ -1388,3 +1388,144 @@ footer {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ==========================================
+   PREMIUM LUXURY VISUAL EFFECTS & SHIMMERS
+   ========================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-gold-hover);
+}
+
+/* Glassmorphism Overrides */
+.booking-search-bar, .booking-widget-card, .booking-mgmt-card, .detail-info-block {
+    background: rgba(17, 21, 28, 0.72) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(197, 168, 128, 0.2) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+html.light-theme .booking-search-bar, 
+html.light-theme .booking-widget-card, 
+html.light-theme .booking-mgmt-card,
+html.light-theme .detail-info-block {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Shimmer Light Sweeping Effect for Buttons */
+.btn-search, .btn-secondary, .btn-book-submit, .btn-book-nav {
+    position: relative;
+    overflow: hidden;
+}
+.btn-search::after, .btn-secondary::after, .btn-book-submit::after, .btn-book-nav::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: none;
+}
+.btn-search:hover::after, .btn-secondary:hover::after, .btn-book-submit:hover::after, .btn-book-nav:hover::after {
+    left: 170%;
+    transition: all 0.9s ease-in-out;
+}
+
+/* Room Cards Premium Hover Enhancements */
+.room-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+}
+.room-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 25px 45px rgba(197, 168, 128, 0.12), 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html.light-theme .room-card:hover {
+    box-shadow: 0 25px 45px rgba(197, 168, 128, 0.15), 0 10px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Hero Section Background Zoom Animation */
+.hero {
+    overflow: hidden;
+    position: relative;
+}
+@keyframes heroBackgroundZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.hero {
+    animation: heroBackgroundZoom 25s ease-in-out infinite;
+}
+
+/* Logo & Text Shadow Glows */
+@keyframes goldGlowPulse {
+    0% { text-shadow: 0 0 10px rgba(197, 168, 128, 0.2); }
+    50% { text-shadow: 0 0 22px rgba(197, 168, 128, 0.45); }
+    100% { text-shadow: 0 0 10px rgba(197, 168, 128, 0.2); }
+}
+.logo-main {
+    animation: goldGlowPulse 4s ease-in-out infinite;
+}
+
+.hero-title {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes subtitleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out, subtitleFloat 4s ease-in-out infinite 1.2s;
+}
+
+/* Spectacular Reveal Variations */
+.reveal.reveal-scale {
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.reveal-scale.active {
+    transform: translateY(0) scale(1);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-60px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.reveal-left.active {
+    transform: translateX(0);
+}
+
+.reveal.reveal-right {
+    transform: translateX(60px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.reveal-right.active {
+    transform: translateX(0);
+}
